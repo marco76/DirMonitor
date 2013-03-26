@@ -22,14 +22,13 @@
   </rowConstraints>
   <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
     <children>
-      <TextField fx:id="tfDirectory" layoutX="14.0" layoutY="31.0" prefWidth="210.0" text="C:/temp/Elp/Sarine" />
+      <TextField fx:id="tfDirectory" layoutX="14.0" layoutY="31.0" prefWidth="210.0" text="/Users/marco/Downloads" />
       <Button fx:id="btnMonitor" layoutX="300.0" layoutY="32.0" mnemonicParsing="false" onAction="#monitorDirectory" text="Button" />
-      <TableView fx:id="tvEvents" layoutX="19.0" layoutY="85.0" prefHeight="200.0" prefWidth="345.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="Event" fx:id="colEvent" />
-          <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="234.0" text="File" fx:id="colFile" />
-        </columns>
-      </TableView>
+      <ScrollPane fx:id="spTable" layoutX="19.0" layoutY="70.0" prefHeight="243.0" prefWidth="361.0">
+        <content>
+          <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="199.99990000000253" prefWidth="331.0" />
+        </content>
+      </ScrollPane>
     </children>
   </Pane>
 </GridPane>

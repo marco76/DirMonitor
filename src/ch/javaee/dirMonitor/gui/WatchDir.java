@@ -12,6 +12,7 @@ import java.util.Map;
 
 import static java.nio.file.LinkOption.NOFOLLOW_LINKS;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
+import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
 
 public class WatchDir implements DirectoryObservable {
 
@@ -31,7 +32,7 @@ public class WatchDir implements DirectoryObservable {
      * Register the given directory with the WatchService
      */
     private void register(Path dir) throws IOException {
-        WatchKey key = dir.register(watcher, ENTRY_CREATE);
+        WatchKey key = dir.register(watcher, ENTRY_CREATE, ENTRY_DELETE);
         if (trace) {
             Path prev = keys.get(key);
             if (prev == null) {
